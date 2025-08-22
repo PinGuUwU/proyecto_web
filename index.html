@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pingu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Elementos decorativos de fondo -->
+    <div class="bg-decoration decoration-1"></div>
+    <div class="bg-decoration decoration-2"></div>
+    <div class="bg-decoration decoration-3"></div>
+
+    <header>
+        <img src="" alt="">
+        <h1>Tu Portal Personal</h1>
+        <figure>
+            <img src="" alt="">
+        </figure>
+    </header>
+    <!-- Acá va una parte izquierda y derecha
+        izquierda:
+            -Mini info de la página y utilidades
+        derecha:
+            -Formulario de inicio de sesión
+    -->
+    <main>
+
+        <section id="presentacion">
+
+            <p>¡Bienvenido!</p>
+
+            <h2>Organiza tu vida, gestiona tus tareas y mantén el control de todo lo importante en un solo lugar.</h2>
+
+            <ul>
+                <li>
+                    <span>📝 Gestiona tareas y recordatorios</span>
+                </li>
+                <li>
+                    <span>🎨 Personaliza tu experiencia</span>
+                </li>
+                <li>
+                    <span>📊 Visualiza tu productividad</span>
+                </li>
+                <li>
+                    <span>🔒 Datos seguros y privados</span>
+                </li>
+            </ul>
+        </section>
+
+
+
+        <section id="formulario">
+            <form>
+                <p>Datos personales</p>
+                <article id="email-form">
+                    <label for="email">Email:</label><br>
+                    <input type="email" name="email" id="email" placeholder="Tu correo electrónico" required>
+                </article>
+
+                <article id="password-form">
+                    <label for="password">Contraseña:</label><br>
+                    <input type="password" name="password" id="password" placeholder="Tu contraseña" minlength="6" maxlength="18" required>
+                </article>
+
+                <article id="checkbox">
+                    <label for="condiciones">Acepte condiciones</label>
+                    <input type="checkbox" name="" id="" required>
+                </article>
+
+                <article id="btn-login">
+                    <input type="submit" value="INICIAR SESIÓN">
+                </article>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Acá va mi información de contacto y "creado por" -->
+    <footer>
+        
+    </footer>
+
+    <script src="js/index.js"></script>
+    
+</body>
+</html>

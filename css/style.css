@@ -111,15 +111,16 @@ header {
 main{
     margin: auto;
     margin-top: 10%;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
 }
+    main section{
+        margin: 0 20%;
+    }
     /*Lado izquierdo de main*/
     .presentacion {
-        max-width: 50%;
         text-align: center;
-        padding: 30px;
     }
     
         .presentacion h2{
@@ -159,7 +160,6 @@ main{
 
     /*Laod derecho de main*/
     .formulario {
-        text-align: center;
         background-color: var(--glass-bg);
         padding: 30px;
         text-align: center;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pingu</title>
+    <title>Tu PP</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,7 +28,9 @@
     -->
     <main>
 
-        <section id="presentacion">
+        <!-- INICIO SESIÓN -->
+
+        <section id="presentacion-inicio" class="presentacion">
 
             <p>¡Bienvenido!</p>
 
@@ -51,31 +53,154 @@
         </section>
 
 
-
-        <section id="formulario">
+        <section id="formulario-inicio" class="formulario">
             <form>
                 <p>Datos personales</p>
-                <article id="email-form">
-                    <label for="email">Email:</label><br>
-                    <input type="email" name="email" id="email" placeholder="Tu correo electrónico" required>
+                <article id="email-inicio">
+                    <label for="email-inicio">Email:</label><br>
+                    <input type="email" 
+                            name="email-inicio" 
+                            id="email-inicio" 
+                            placeholder="Tu correo electrónico" 
+                            required>
                 </article>
 
-                <article id="password-form">
-                    <label for="password">Contraseña:</label><br>
-                    <input type="password" name="password" id="password" placeholder="Tu contraseña" minlength="6" maxlength="18" required>
+                <article id="password-inicio">
+                    <label for="password-inicio">Contraseña:</label><br>
+                    <input type="password" 
+                            name="password-inicio" 
+                            id="password-inicio" 
+                            placeholder="Tu contraseña" 
+                            minlength="6" 
+                            maxlength="18" 
+                            required>
                 </article>
 
-                <article id="checkbox">
-                    <label for="condiciones">Acepte condiciones</label>
-                    <input type="checkbox" name="" id="" required>
+                <article id="checkbox-inicio" class="checkbox">
+                    <label for="">Acepte condiciones</label>
+                    <input type="checkbox" required>
                 </article>
 
-                <article id="btn-login">
+                <article id="btn-login" class="btn-submit">
                     <input type="submit" value="INICIAR SESIÓN">
                 </article>
 
+
             </form>
+
+            <hr>
+            <article id="registrar" class="cambio-registro-inicio">
+                <p>¿No tenes cuenta?</p>
+                <a href="#!">Registrate acá</a>
+            </article>
         </section>
+
+
+
+
+        <!-- REGISTRO -->
+
+         <section id="presentacion-registro" class="presentacion">
+
+            <p>Únete a nosotros</p>
+
+            <h2>Crea tu cuenta gratuita y comienza a organizar tu vida de manera más eficiente desde el primer día.</h2>
+
+            <ul>
+                <li>
+                    <span>⚡ Configuración rápida en 2 minutos</span>
+                </li>
+                <li>
+                    <span>🛡️ Seguridad garantizada para tus datos</span>
+                </li>
+                <li>
+                    <span>🆓 Completamente gratis para siempre</span>
+                </li>
+                <li>
+                    <span>📱 Sincronización en todos tus dispositivos</span>
+                </li>
+            </ul>
+
+            <article>
+
+            </article>
+
+        </section>
+
+
+         <section id="formulario-registro" class="formulario">
+            <form>
+                <p>Crear Cuenta</p>
+                <h2>Únete a miles de usuarios organizados</h2>
+
+                <article id="name-registro">
+                    <label for="name-registro">Nombre:</label><br>
+                    <input type="text" 
+                            name="name" 
+                            id="name-registro"
+                            placeholder="Tu nombre" 
+                            required>
+                </article>
+
+                <article id="last-name">
+                    <label for="last-name">Apellido:</label><br>
+                    <input type="text" 
+                            name="last-name" 
+                            id="last-name"
+                            placeholder="Tu apellido" 
+                            required>
+                </article>
+
+                <article id="email-registro">
+                    <label for="email-registro">Email:</label><br>
+                    <input type="email" 
+                            name="email" 
+                            id="email-registro" 
+                            placeholder="Tu correo electrónico" 
+                            required>
+                </article>
+
+                <article id="password-registro">
+                    <label for="password-registro">Contraseña:</label><br>
+                    <input type="password" 
+                            name="password-registro" 
+                            id="password-registro" 
+                            placeholder="Tu contraseña" 
+                            minlength="6"
+                            maxlength="18" 
+                            required>
+                </article>
+
+                <article id="repeat-password">
+                    <label for="repeat-password">Contraseña:</label><br>
+                    <input type="password" 
+                            name="repeat-password" 
+                            id="repeat-password" 
+                            placeholder="Tu contraseña" 
+                            minlength="6" 
+                            maxlength="18" 
+                            required>
+                </article>
+
+                <article id="checkbox-registro" class="checkbox">
+                    <label for="condiciones">Acepte condiciones</label>
+                    <input type="checkbox" required>
+                </article>
+
+                <article id="btn-registro" class="btn-submit">
+                    <input type="submit" value="REGISTRAR">
+                </article>
+
+            </form>
+
+            <hr>
+            <article id="iniciar-sesion" class="cambio-registro-inicio">
+                <p>¿Ya tenes cuenta?</p>
+                <a href="#!">Iniciá sesión acá</a>
+            </article>
+
+        </section>
+
 
     </main>
 

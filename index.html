@@ -56,11 +56,10 @@
         <section id="formulario-inicio" class="formulario">
             <form>
                 <p>Datos personales</p>
-                <article id="email-inicio">
-                    <label for="email-inicio">Email:</label><br>
-                    <input type="email" 
-                            name="email-inicio" 
-                            id="email-inicio" 
+                <article id="dato-inicio">
+                    <label for="dato-inicio">Email o Usuario:</label><br>
+                    <input type="dato" 
+                            name="dato-inicio" 
                             placeholder="Tu correo electrónico" 
                             required>
                 </article>
@@ -69,20 +68,14 @@
                     <label for="password-inicio">Contraseña:</label><br>
                     <input type="password" 
                             name="password-inicio" 
-                            id="password-inicio" 
                             placeholder="Tu contraseña" 
                             minlength="6" 
                             maxlength="18" 
                             required>
                 </article>
 
-                <article id="checkbox-inicio" class="checkbox">
-                    <label for="">Acepte condiciones</label>
-                    <input type="checkbox" required>
-                </article>
-
                 <article id="btn-login" class="btn-submit">
-                    <input type="submit" value="INICIAR SESIÓN">
+                    <input type="" value="INICIAR SESIÓN">
                 </article>
 
 
@@ -133,21 +126,11 @@
                 <p>Crear Cuenta</p>
                 <h2>Únete a miles de usuarios organizados</h2>
 
-                <article id="name-registro">
-                    <label for="name-registro">Nombre:</label><br>
+                <article id="username-registro">
+                    <label for="username-registro">Usuario:</label><br>
                     <input type="text" 
-                            name="name" 
-                            id="name-registro"
+                            name="username" 
                             placeholder="Tu nombre" 
-                            required>
-                </article>
-
-                <article id="last-name">
-                    <label for="last-name">Apellido:</label><br>
-                    <input type="text" 
-                            name="last-name" 
-                            id="last-name"
-                            placeholder="Tu apellido" 
                             required>
                 </article>
 
@@ -155,7 +138,6 @@
                     <label for="email-registro">Email:</label><br>
                     <input type="email" 
                             name="email" 
-                            id="email-registro" 
                             placeholder="Tu correo electrónico" 
                             required>
                 </article>
@@ -164,23 +146,20 @@
                     <label for="password-registro">Contraseña:</label><br>
                     <input type="password" 
                             name="password-registro" 
-                            id="password-registro" 
                             placeholder="Tu contraseña" 
                             minlength="6"
                             maxlength="18" 
                             required>
                 </article>
 
-                <article id="repeat-password">
-                    <label for="repeat-password">Contraseña:</label><br>
+                <!-- <article id="repeat-password">
+                    <label for="repeat-password">Repita contraseña:</label><br>
                     <input type="password" 
                             name="repeat-password" 
                             id="repeat-password" 
-                            placeholder="Tu contraseña" 
-                            minlength="6" 
-                            maxlength="18" 
+                            placeholder="Tu contraseña"  
                             required>
-                </article>
+                </article> -->
 
                 <article id="checkbox-registro" class="checkbox">
                     <label for="condiciones">Acepte condiciones</label>
@@ -188,7 +167,7 @@
                 </article>
 
                 <article id="btn-registro" class="btn-submit">
-                    <input type="submit" value="REGISTRAR">
+                    <input type="" value="REGISTRAR">
                 </article>
 
             </form>

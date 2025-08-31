@@ -46,7 +46,7 @@ function buscarUsuario(usuario){
         console.log('buscarUsuario() encontró un usuario')
         return usuarioEncontrado
     } else {
-        console.log('No se encontró el usuario', usuarioEncontrado)
+        console.log('No se encontró el usuario', usuarioEncontrado.username)
         return null
     }
 }

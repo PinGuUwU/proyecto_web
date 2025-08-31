@@ -31,7 +31,7 @@ function registrarUsuario(usuario, email, password){
         email: email,
         password: password
     }
-    if(buscarUsuario(user.username) != null){
+    if(buscarUsuario(user) != null){
         alert('El Usuario o email ingresados ya están registrados.')
         irInicioSesion()
     } else {
@@ -41,6 +41,7 @@ function registrarUsuario(usuario, email, password){
 }
 
 function buscarUsuario(usuario){
+    user = usuario
     let usuarioEncontrado = JSON.parse(localStorage.getItem("user"))
         if(usuarioEncontrado != null){
         console.log('buscarUsuario() encontró un usuario')

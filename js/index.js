@@ -25,31 +25,26 @@ function irArriba(){
     window.scrollTo(0,0)
 }
 
-function registrarUsuario(usuario, email, password){
-    user = {
-        username: usuario,
-        email: email,
-        password: password
-    }
-    if(buscarUsuario(user) != null){
-        alert('El Usuario o email ingresados ya están registrados.')
-        irInicioSesion()
+function registrarUsuario(usuario, email, password) {
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // Verificar si ya existe usuario o email
+    let existe = usuarios.find(u => u.username === usuario || u.email === email);
+
+    if (existe) {
+        alert('El Usuario o email ingresados ya están registrados.');
+        irInicioSesion();
     } else {
-        localStorage.setItem('user', JSON.stringify(user))
-        console.log('Se guardaron los datos del usuario: ', user)
+        let user = { username: usuario, email: email, password: password };
+        usuarios.push(user);
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        console.log('Se guardaron los datos del usuario: ', user);
     }
 }
 
-function buscarUsuario(usuario){
-    user = usuario
-    let usuarioEncontrado = JSON.parse(localStorage.getItem("user"))
-        if(usuarioEncontrado != null){
-        console.log('buscarUsuario() encontró un usuario')
-        return usuarioEncontrado
-    } else {
-        console.log('No se encontró el usuario', usuarioEncontrado.username)
-        return null
-    }
+function buscarUsuario(username) {
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    return usuarios.find(u => u.username === username) || null;
 }
 
 function irInicioSesion(){
@@ -105,12 +100,11 @@ btnIniciarSesion.addEventListener(
     'click', () => {
         const password = document.querySelector('#password-inicio input')
         const name = document.querySelector('#dato-inicio input')
-        user = buscarUsuario(name)
-        if(user.password != password){
-            alert('La contraseña o el usuario son incorrectos.')
-        } else{
-            console.log('se inicio sesion')
-            
+        let usuarioEncontrado = buscarUsuario(name);
+        if (!usuarioEncontrado || usuarioEncontrado.password !== password) {
+            alert('La contraseña o el usuario son incorrectos.');
+        } else {
+            console.log('Se inició sesión con:', usuarioEncontrado);
         }
     }
 )

@@ -41,7 +41,7 @@ function registrarUsuario(usuario, email, password){
 }
 
 function buscarUsuario(usuario){
-    let usuarioEncontrado = JSON.parse(localStorage.getItem("usuario"))
+    let usuarioEncontrado = JSON.parse(localStorage.getItem("user"))
         if(usuarioEncontrado != null){
         console.log('buscarUsuario() encontró un usuario')
         return usuarioEncontrado

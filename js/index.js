@@ -111,8 +111,8 @@ btnIniciarSesion.addEventListener(
 
 btn_clear.addEventListener(
     "click", () => {
-    localStorage.clear()
-    alert("Se borró todo el LocalStorage 🚀")
+        alert("Se borró todo el LocalStorage 🚀")
+        localStorage.clear()
   }
 )
 

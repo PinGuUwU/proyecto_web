@@ -11,7 +11,7 @@ const btnIniciarSesion = document.querySelector('#btn-login')
 const presentacionInicio = document.querySelector('#presentacion-inicio')
 const formularioInicio = document.querySelector('#formulario-inicio')
 
-
+const btn_clear = document.querySelector("#btn-clear")
 
 //Declaraciones
 
@@ -107,6 +107,13 @@ btnIniciarSesion.addEventListener(
             console.log('Se inició sesión con:', usuarioEncontrado);
         }
     }
+)
+
+btn_clear.addEventListener(
+    "click", () => {
+    localStorage.clear()
+    alert("Se borró todo el LocalStorage 🚀")
+  }
 )
 
 /*

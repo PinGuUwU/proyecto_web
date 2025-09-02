@@ -56,6 +56,7 @@ btnInicio.addEventListener(
 btnRegistrarse.addEventListener(
     'click', () => {
         confirm("Se ha registrado con éxito. \nSerá enviado a la página de LogIn.")
+        irInicioSesion()
     }
 )
 

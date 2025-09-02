@@ -66,7 +66,7 @@ btnIniciarSesion.addEventListener(
     }
 )
 
-
+console.log("versión 1.0")
 
 /*
     Funciones a hacer:

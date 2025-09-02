@@ -11,40 +11,18 @@ const btnIniciarSesion = document.querySelector('#btn-login')
 const presentacionInicio = document.querySelector('#presentacion-inicio')
 const formularioInicio = document.querySelector('#formulario-inicio')
 
-const btn_clear = document.querySelector("#btn-clear")
 
 //Declaraciones
-
-let user = {
-        username: 'usuario',
-        email: 'email',
-        password: 'password'
-    }
 
 function irArriba(){
     window.scrollTo(0,0)
 }
 
-function registrarUsuario(usuario, email, password) {
-    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-
-    // Verificar si ya existe usuario o email
-    let existe = usuarios.find(u => u.username === usuario || u.email === email);
-
-    if (existe) {
-        alert('El Usuario o email ingresados ya están registrados.');
-        irInicioSesion();
-    } else {
-        let user = { username: usuario, email: email, password: password };
-        usuarios.push(user);
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
-        console.log('Se guardaron los datos del usuario: ', user);
-    }
-}
-
-function buscarUsuario(username) {
-    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-    return usuarios.find(u => u.username === username) || null;
+function irRegistro(){
+    presentacionRegistro.style.display = 'block'
+    formularioRegistro.style.display = 'block'
+    presentacionInicio.style.display = 'none'
+    formularioInicio.style.display = 'none'
 }
 
 function irInicioSesion(){
@@ -62,22 +40,17 @@ console.log(usuarioEncontrado.username)
 
 //control
 
-//Oculto el registro
+//Oculto el registro cuando alguien carga la página
 
 presentacionRegistro.style.display = 'none'
 formularioRegistro.style.display = 'none'
 
 btnRegistro.addEventListener(
     'click', () => {
-        presentacionInicio.style.display = 'none'
-        formularioInicio.style.display = 'none'
-        presentacionRegistro.style.display = 'block'
-        formularioRegistro.style.display = 'block'
+        irRegistro()
         irArriba()
     }
 )
-
-
 
 btnInicio.addEventListener(
     'click', () => {
@@ -98,23 +71,11 @@ btnRegistrarse.addEventListener(
 
 btnIniciarSesion.addEventListener(
     'click', () => {
-        const password = document.querySelector('#password-inicio input')
-        const name = document.querySelector('#dato-inicio input')
-        let usuarioEncontrado = buscarUsuario(name);
-        if (!usuarioEncontrado || usuarioEncontrado.password !== password) {
-            alert('La contraseña o el usuario son incorrectos.');
-        } else {
-            console.log('Se inició sesión con:', usuarioEncontrado);
-        }
+        //Acá lo envío al dashboard
     }
 )
 
-btn_clear.addEventListener(
-    "click", () => {
-        alert("Se borró todo el LocalStorage 🚀")
-        localStorage.clear()
-  }
-)
+
 
 /*
     Funciones a hacer:

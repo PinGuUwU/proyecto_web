@@ -228,8 +228,9 @@ main{
         }
 
 
-        .btn-submit input{
-            border: none;
+        .btn-submit a{
+            white-space: nowrap;
+            border: 1px;
             font-weight: 600;
             font-size: 20px;
             color: var(--text-light);

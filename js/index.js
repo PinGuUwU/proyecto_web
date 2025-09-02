@@ -32,12 +32,6 @@ function irInicioSesion(){
     formularioInicio.style.display = 'block'
 }
 
-localStorage.setItem('user', JSON.stringify(user))
-
-let usuarioEncontrado = JSON.parse(localStorage.getItem("user"))
-
-console.log(usuarioEncontrado.username)
-
 //control
 
 //Oculto el registro cuando alguien carga la página
@@ -61,11 +55,7 @@ btnInicio.addEventListener(
 
 btnRegistrarse.addEventListener(
     'click', () => {
-        registrarUsuario(
-            document.querySelector('#username-registro input').value,
-            document.querySelector('#email-registro input').value,
-            document.querySelector('#password-registro input').value
-        )
+        confirm("Se ha registrado con éxito. \nSerá enviado a la página de LogIn.")
     }
 )
 

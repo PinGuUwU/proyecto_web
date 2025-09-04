@@ -5,11 +5,172 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dbstyle_temp.css">
 </head>
 
 <body>
-  <h1 style="" class="text-center">Dashboard</h1>
+
+<div class="dashboard">
+        <header class="dashboard-header">
+            <h1><i class="fas fa-tasks"></i> TaskFlow Dashboard</h1>
+            <div class="header-controls">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                    <span>Tema</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <main class="main-content">
+                <!-- Quote Rotator -->
+                <div class="quote-rotator">
+                    <div class="quote-text" id="rotatingQuote">¡Bienvenido a tu espacio de productividad!</div>
+                </div>
+
+                <!-- Task Form -->
+                <div class="card">
+                    <h2><i class="fas fa-plus-circle"></i> Agregar Nueva Tarea</h2>
+                    <form id="taskForm" class="task-form">
+                        <div class="form-row">
+                            <div class="form-group-inline">
+                                <label for="taskName">Nombre de la tarea</label>
+                                <input type="text" id="taskName" required placeholder="Ej: Reunión con el equipo">
+                            </div>
+                            <div class="form-group-inline">
+                                <label for="taskCategory">Categoría</label>
+                                <select id="taskCategory" required>
+                                    <option value="">Seleccionar categoría</option>
+                                    <option value="compra">🛒 Compra</option>
+                                    <option value="cumpleanos">🎂 Cumpleaños</option>
+                                    <option value="clase">📚 Clase</option>
+                                    <option value="cita">🏥 Cita</option>
+                                    <option value="trabajo">💼 Trabajo</option>
+                                    <option value="personal">👤 Personal</option>
+                                    <option value="ejercicio">🏃‍♂️ Ejercicio</option>
+                                    <option value="comida">🍽️ Comida</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group-inline">
+                            <label for="taskDescription">Descripción</label>
+                            <textarea id="taskDescription" rows="3" placeholder="Describe los detalles de tu tarea..."></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group-inline">
+                                <label for="taskDate">Fecha</label>
+                                <input type="date" id="taskDate" required>
+                            </div>
+                            <div class="form-group-inline">
+                                <label for="taskColor">Color</label>
+                                <input type="color" id="taskColor" value="#667eea">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group-inline">
+                                <label for="taskStartTime">Hora inicio</label>
+                                <input type="time" id="taskStartTime" required>
+                            </div>
+                            <div class="form-group-inline">
+                                <label for="taskEndTime">Hora fin (opcional)</label>
+                                <input type="time" id="taskEndTime">
+                            </div>
+                        </div>
+
+                        <div class="form-group-inline">
+                            <label>Seleccionar ícono</label>
+                            <div class="icon-selector">
+                                <div class="icon-option selected" data-icon="fas fa-calendar"><i class="fas fa-calendar"></i></div>
+                                <div class="icon-option" data-icon="fas fa-shopping-cart"><i class="fas fa-shopping-cart"></i></div>
+                                <div class="icon-option" data-icon="fas fa-birthday-cake"><i class="fas fa-birthday-cake"></i></div>
+                                <div class="icon-option" data-icon="fas fa-graduation-cap"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="icon-option" data-icon="fas fa-stethoscope"><i class="fas fa-stethoscope"></i></div>
+                                <div class="icon-option" data-icon="fas fa-briefcase"><i class="fas fa-briefcase"></i></div>
+                                <div class="icon-option" data-icon="fas fa-heart"><i class="fas fa-heart"></i></div>
+                                <div class="icon-option" data-icon="fas fa-star"><i class="fas fa-star"></i></div>
+                                <div class="icon-option" data-icon="fas fa-coffee"><i class="fas fa-coffee"></i></div>
+                                <div class="icon-option" data-icon="fas fa-home"><i class="fas fa-home"></i></div>
+                                <div class="icon-option" data-icon="fas fa-car"><i class="fas fa-car"></i></div>
+                                <div class="icon-option" data-icon="fas fa-music"><i class="fas fa-music"></i></div>
+                            </div>
+                        </div>
+
+                        <!-- Category-specific fields -->
+                        <div id="categoryFields" class="category-fields" style="display: none;"></div>
+
+                        <button type="submit" class="btn">
+                            <i class="fas fa-plus" ></i> Agregar Tarea
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Tasks Display -->
+                <div class="card">
+                    <h2><i class="fas fa-tasks"></i> Mis Tareas</h2>
+                    <div id="tasksContainer" class="tasks-grid">
+                        <div class="empty-state">
+                            <i class="fas fa-clipboard-list" style="font-size: 3rem; opacity: 0.3; margin-bottom: 1rem;"></i>
+                            <p>No tienes tareas programadas</p>
+                            <small>¡Agrega tu primera tarea usando el formulario de arriba!</small>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                <!-- User Invitations -->
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-users"></i> Invitar usuarios</h3>
+                    <input type="email" id="inviteEmail" placeholder="email@ejemplo.com" class="form-control">
+                    <button class="btn-side">
+                        <i class="fas fa-user-plus"></i> Invitar
+                    </button>
+                    <div class="invited-users" id="invitedUsers">
+                        <!-- Invited users will appear here -->
+                    </div>
+                    <small style="color: #666; margin-top: 0.5rem; display: block;">Máximo 3 usuarios adicionales</small>
+                </div>
+
+                <!-- Theme Customization -->
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-palette"></i> Personalización</h3>
+                    <div class="form-group-inline">
+                        <label>Color de fondo</label>
+                        <input type="color" id="bgColor" value="#667eea" onchange="changeBgColor(this.value)">
+                    </div>
+                </div>
+
+                <!-- Tags Management (NO SE PARA QUÉ SERVIRÍA) -->
+                <!-- <div class="sidebar-section">
+                    <h3><i class="fas fa-tags"></i> Etiquetas Personalizadas</h3>
+                    <input type="text" id="newTagName" placeholder="Nueva etiqueta" class="form-control">
+                    <div class="form-row" style="margin-bottom: 1rem;">
+                        <input type="color" id="newTagColor" value="#667eea" style="width: 60px; height: 40px;">
+                        <input type="number" id="newTagPriority" placeholder="Prioridad (1-10)" min="1" max="10" class="form-control">
+                    </div>
+                    <button onclick="createTag()" class="btn-side">
+                        <i class="fas fa-tag"></i> Crear Etiqueta
+                    </button>
+                    <div id="customTags" style="margin-top: 1rem;"> -->
+                        <!-- Custom tags will appear here -->
+                    <!-- </div>
+                </div> -->
+
+                <!-- Feedback Form -->
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-comment-alt"></i> Feedback</h3>
+                    <textarea id="feedbackText" placeholder="Comparte tu opinión sobre la aplicación..." class="form-control"></textarea>
+                    <button class="btn-side">
+                        <i class="fas fa-paper-plane"></i> Enviar Feedback
+                    </button>
+                </div>
+            </aside>
+        </div>
+    </div>
+
   <script src="js/dashboard.js"></script>
  
 </body>

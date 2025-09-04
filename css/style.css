@@ -118,6 +118,28 @@ main{
     main section{
         margin: 0 20%;
     }
+
+    li span {
+            list-style: none;
+        }
+
+        li span {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s;
+        }
+
+        li span:hover {
+            transform: translateX(10px);
+        }
+
     /*Lado izquierdo de main*/
     .presentacion {
         text-align: center;
@@ -245,7 +267,11 @@ main{
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 10px;
-}
+        }  
+
+        .btn-submit:hover {
+            transform: scale(1.05); /* 5% más grande */
+        }
         
 
 
